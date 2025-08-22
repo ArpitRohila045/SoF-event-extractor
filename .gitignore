@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+__pycache__/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+
+# Virtual Environment
+src/
+.env
+
+# Django specific
+/staticfiles/
+/media/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+"venv/" 
