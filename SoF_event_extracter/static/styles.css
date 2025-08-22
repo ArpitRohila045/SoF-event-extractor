@@ -163,3 +163,55 @@ body {
 .auth-card a:hover {
   text-decoration: underline;
 }
+
+
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background: #f5f7fa;
+}
+
+.upload-card, .success-card {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.upload-card:hover, .success-card:hover {
+    transform: translateY(-4px);
+}
+
+.upload-card h2, .success-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+form p {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.btn-upload {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #4a90e2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-upload:hover {
+    background: #357ABD;
+}
