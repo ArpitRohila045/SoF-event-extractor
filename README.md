@@ -1,8 +1,6 @@
-# SoF-event-extractor
-
 # SoF-Event-Extractor
 
-**Event extractor from PDFs**
+**Event extractor from PDFs/Words**
 
 ---
 
