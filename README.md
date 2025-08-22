@@ -98,21 +98,21 @@ SoF-event-extractor/
 
 ### 1. Clone the Repository
 
-git clone https://github.com/ArpitRohila045/SoF-event-extractor.git
-cd SoF-event-extractor
+```git clone https://github.com/ArpitRohila045/SoF-event-extractor.git```
+```cd SoF-event-extractor```
 
 ### 2. Create Virtual Environment & Install Dependencies
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+```python3 -m venv venv```
+```source venv/bin/activate```
+```pip install -r requirements.txt```
 
 ### 3. Run Migrations
-python manage.py makemigrations
-python manage.py migrate
+```python manage.py makemigrations```
+```python manage.py migrate```
 
 ### 4. Create a Superuser
-python manage.py createsuperuser
+```python manage.py createsuperuser```
 
 ### 5. Run the Development Server
-python manage.py runserver
+```python manage.py runserver```
 
