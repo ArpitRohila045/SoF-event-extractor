@@ -72,7 +72,7 @@ The **data pipeline** is structured as follows:
 ---
 
 ## 📂 Project Structure
-
+```
 SoF-event-extractor/
 ├── pipeline/ # App for document upload & processing
 │ ├── models.py # SOFDocument, SOFData models
@@ -92,7 +92,7 @@ SoF-event-extractor/
 ├── manage.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ---
 
