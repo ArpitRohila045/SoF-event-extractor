@@ -50,35 +50,41 @@ class SoFDocument(models.Model):
         return f"{self.file_name or self.file.name} - {self.user.username}"
     
     def save(self, *args, **kwargs):
-        # Set original filename and file type if not already set
-        if self.file and not self.file_name :
-            self.file_name = self.file_name
+        # Set original filename if not already set
+        if self.file and not self.file_name:
+            self.file_name = self.file.name
 
-        # Determine file type by their extension
+        # Determine file type by extension
         if self.file and not self.file_type:
             ext = os.path.splitext(self.file.name)[1].lower()
             if ext == '.pdf':
-                self.file_type = '.pdf'
+                self.file_type = 'pdf'
             elif ext in ['.doc', '.docx']:
-                self.file_type = 'word' if ext == '.doc' else 'docx'
+                self.file_type = 'word'
 
         super().save(*args, **kwargs)
 
     def get_file_size(self):
-        """Return human readlable format"""
-        pass
+        """Return human readable format"""
+        if self.file:
+            size = self.file.size
+            for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+                if size < 1024.0:
+                    return f"{size:.2f} {unit}"
+                size /= 1024.0
+        return "0 B"
 
 
 class SOFData(models.Model):
 
-    documnent = models.OneToOneField(
+    document = models.OneToOneField(
         SoFDocument,
         on_delete=models.CASCADE,
-        related_name = 'extracted_data'
+        related_name='extracted_data'
     )
     extracted_data = models.JSONField(default=dict)
     extracted_at = models.DateTimeField(auto_now_add=True)
     confidence_score = models.FloatField(default=0.0)
 
     def __str__(self):
-        return f"Data from {self.documnent.file.name} by {self.documnent.user.username}"
+        return f"Data from {self.document.file.name} by {self.document.user.username}"

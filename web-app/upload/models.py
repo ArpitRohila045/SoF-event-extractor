@@ -10,7 +10,7 @@ class SoFDocument(models.Model):
     ]
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="sof_documents")
     file = models.FileField(upload_to='sof_documnents/')
-    file_type = models.CharField(max_length=11, choices=FILE_TYPE)
+    file_type = models.CharField(max_length=11, choices=FILE_TYPE, null=True)
     uplaoded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
